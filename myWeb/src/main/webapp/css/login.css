@@ -1,0 +1,81 @@
+:root {
+    --header-height: 56px;
+}
+
+body {
+    margin: 0px;
+    padding: 0;
+    background-image: url(../img/loginbackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    background-attachment: fixed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1005;
+    width: 100%;
+    height: var(--header-height);
+    border-bottom: 1px solid var(--border-grey-color);
+    background-color: #262626;
+}
+
+a {
+    margin: 30px auto;
+    height: 20px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#bigBox {
+
+    margin: 130px 100px 0px auto;
+    padding: 15px 30px;
+    width: 300px;
+    height: 350px;
+    border-radius: 5px;
+    text-align: center;
+    background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
+}
+
+#bigBox h1 {
+    font-size: 40px;
+    color: floralwhite;
+}
+
+#bigBox .inputBox {
+    margin-top: 0px;
+}
+
+#bigBox .inputBox .inputText {
+    margin-top: 10px;
+}
+
+#bigBox .inputBox .inputText input {
+    border: 0;
+    padding: 10px 10px;
+    border-bottom: 1px solid white;
+    background-color: #00000000;
+    color: white;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#bigBox .inputBox .inputText i {
+    color: white;
+}
+
+#bigBox .inputBox .inputButton {
+    border: 0;
+    width: 200px;
+    height: 50px;
+    color: white;
+    margin-top: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #b8efb8 0%, rgba(160, 236, 202, 0.91) 10%, #aff1fa 33%, #8ad6f1 66%);
+}

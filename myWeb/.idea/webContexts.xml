@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/notice/add.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/notice" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/orders/view.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/orders" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/products/list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/products" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/sell/sell.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/sell" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userinfo/oneSettle.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userinfo" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/admin.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/login/login.jsp" value="file://$PROJECT_DIR$/src/main/webapp/login" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/user/productdetail.jsp" value="file://$PROJECT_DIR$/src/main/webapp/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/userinfo/commitorder.jsp" value="file://$PROJECT_DIR$/src/main/webapp/userinfo" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/userinfo/myCart.jsp" value="file://$PROJECT_DIR$/src/main/webapp/userinfo" />
+      </map>
+    </option>
+  </component>
+</project>

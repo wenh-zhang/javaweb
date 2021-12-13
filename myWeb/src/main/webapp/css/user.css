@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+:root {
+    --blue: #1376ff;
+    --black: #252424;
+    --white: #fff;
+    --gray-medium: #39393e;
+    --gray-light: #b0b0b2;
+    --white-light: #4bd5e7;
+    --border-grey-color: #3f3e3e;
+    --radius: 10px;
+    --item-padding: 13px 17px;
+    --header-height: 56px;
+    --sidebar-full-width: 15rem;
+    --sidebar-width: 56px;
+    --t-base: 0.18s;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a, ing, p {
+    margin-top: 0;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+body {
+    margin: 0px;
+    padding: 0;
+    background-image: url(../img/loginbackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    background-attachment: fixed;
+}
+
+.linkBox {
+    width: 100%;
+    /* 因为 content 会另起一行，影响样式的话，height 设置为具体的值可以避免高度变高的情况 */
+    height: 100%;
+    /* 设置元素两端对齐 */
+    text-align: justify;
+}
+
+/* 这里的伪元素一定要加上，不然span元素不能两端对齐 */
+.linkBox:after {
+    content: "";
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+}
+
+.linkBox span {
+    width: 450px;
+    height: 56px;
+    /* 设置盒子为行内块 */
+    display: inline-block;
+    /* 设置盒子内元素水平居中 */
+    text-align: center;
+    /* 设置盒子内容垂直居中 */
+    line-height: 50px;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.linkBox span .title {
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 10px #eaf5ef, 0 0 20px #c0ecc7, 0 0 30px #b4e2e7, 0 0 40px #f1b0b0;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1005;
+    width: calc(100% - var(--sidebar-width));
+    height: var(--header-height);
+    border-bottom: 1px solid var(--border-grey-color);
+    background-color: #262626;
+}
+
+.main {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1005;
+    width: calc(100% - var(--sidebar-width));
+    height: calc(100% - var(--header-height));
+    /*padding: 1.0rem 5.6rem 2.5333rem;*/
+    border-bottom: 1px solid var(--border-grey-color);
+    background-color: #504e4e;
+
+}
+
+.sidebar {
+    width: var(--sidebar-full-width);
+    color: var(--gray-light);
+    background-color: var(--black);
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+
+@media {
+    .sidebar {
+        width: var(--sidebar-width)
+    }
+
+    .sidebar:hover {
+        width: var(--sidebar-full-width)
+    }
+}
+
+
+.sidebar__top {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    height: var(--header-height);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.sidebar__top .top {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar__content {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    height: calc(100% - var(--header-height));
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+::-webkit-scrollbar {
+    display: none
+}
+
+.sidebar__nav {
+    width: 100%;
+    padding-top: 5px;
+    display: block;
+
+}
+
+.sidebar__menu--item {
+    cursor: pointer;
+    height: 48px;
+    padding: var(--item-padding);
+    border-radius: var(--radius);
+    transition: all 150ms cubic-bezier(0.92, 0.69, 0.65, 0.88);
+}
+
+.sidebar__link {
+    white-space: nowrap;
+    width: 98px;
+    height: 22px;
+    display: flex;
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+}
+
+.sidebar__link-text {
+    white-space: nowrap;
+    -webkit-transition: var(--t-base);
+    transition: var(--t-base);
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.sidebar:hover .sidebar__link-text {
+    opacity: 1
+}
+
+@media {
+    .sidebar__link-text {
+        opacity: 0
+    }
+}
+
+.sidebar__menu--item:hover {
+    color: var(--white);
+}
+
+.sidebar__menu--item:hover svg {
+    fill: var(--white);
+}
+
+.sidebar__menu--item.is-active {
+    color: var(--white);
+    background-color: var(--white-light);
+}
+
+.sidebar__menu--item.is-active svg {
+    fill: var(--white);
+}
+
+
+.sidebar__menu--item span {
+    margin-left: 1.2rem;
+}
+
+.sidebar__profile {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar:hover .sidebar__profile {
+    opacity: 1
+}
+
+@media {
+    .sidebar__profile {
+        opacity: 0
+    }
+}
+
+.sidebar__profile .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius);
+    align-self: stretch;
+    overflow: hidden;
+}
+
+.sidebar__profile .avatar img {
+    border-radius: inherit;
+}
+
+.sidebar__profile .content {
+    margin-left: 12px;
+}
+
+.sidebar__profile .content strong {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.sidebar__profile .content p {
+    color: var(--white);
+}
+
+.sidebar__profile .arrow {
+    margin-left: auto;
+    background-color: var(--gray-medium);
+    border-radius: var(--radius);
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar__profile .arrow svg {
+    width: 13px;
+    height: 13px;
+}
+
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--gray-light);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    color: #060712;
+    background-color: #f8f4f2;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.15;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+#noticeBox {
+    margin: 30px auto;
+    padding: 15px 30px;
+    width: 800px;
+    height: 450px;
+    border-radius: 5px;
+    text-align: center;
+    background-image: linear-gradient(-20deg, #616161 0%, #606060 100%);
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+h2{
+    color: whitesmoke;
+}
+
+#productBox {
+    margin: 20px auto;
+    padding: 10px 30px;
+    width: 95%;
+    height: 95%;
+    border-radius: 5px;
+    background-image: linear-gradient(-20deg, #616161 0%, #606060 100%);
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+#productBox  .product{
+    margin: 5px 10px;
+    padding: 5px 5px;
+    width: 47%;
+    height: 30%;
+    border-style: solid;
+    border-radius:5px;
+    border-width: 2px;
+    border-color: #504e4e;
+    background-image: linear-gradient(-20deg, #2f2c2c 0%, #312f2f 100%);
+}
+#productBox div{
+    cursor: pointer;
+}
+#productBox  .product div{
+    width: 49%;height: 100%;display:inline-block;vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+
+#productBox  .product div a{
+    font-size: 25px;
+}
+
+.productDetails{
+    margin: 5% ;
+    padding: 5px 5px;
+    width: 80%;
+    height: 80%;
+    border-style: solid;
+    border-radius:5px;
+    border-width: 2px;
+    border-color: #504e4e;
+    background-image: linear-gradient(-20deg, #2f2c2c 0%, #312f2f 100%);
+}
+.productDetails div{
+    width: 49%;height: 100%;display:inline-block;vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+.productDetails div div{
+    width: 32%;height: 15%;display:inline-block;vertical-align: middle;
+    text-align: left;
+    position: relative;
+}
+.productDetails div div button{
+    color: white;position:absolute;bottom: 0px;font-size: 20px;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+
+
+.cart td{
+    text-align: center;
+    margin-top: 5px;
+}
+.cart input{
+    text-align: center;
+}
+
+#cartBox{
+    margin: 20px auto;
+    padding: 10px 30px;
+    width: 95%;
+    height: 95%;
+    border-radius: 5px;
+    background-image: linear-gradient(-20deg, #616161 0%, #606060 100%);
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+.cartBox1{
+    margin-top: 5px;
+    width: 100%;
+    height: 80%;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+.cartBox2{
+    margin-bottom: 5px;
+    padding: 5px 5px;
+    width: 100%;
+    height: 15%;
+    border-style: solid;
+    border-radius:5px;
+    border-width: 2px;
+    border-color: #504e4e;
+    background-image: linear-gradient(-20deg, #2f2c2c 0%, #312f2f 100%);
+}
+
+.receiverinfo{
+    width: 100%;
+    height: 30%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+td{
+    color: whitesmoke;
+}

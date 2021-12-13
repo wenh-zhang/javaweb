@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a, ing, p {
+    border: 0;
+    color:whitesmoke;
+}
+
+body {
+    margin: 0px;
+    padding: 0;
+    background-image: url(../img/loginbackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    background-attachment: fixed;
+}
+
+:root {
+    --blue: #1376ff;
+    --black: #252424;
+    --white: #fff;
+    --gray-medium: #39393e;
+    --gray-light: #b0b0b2;
+    --white-light: #4bd5e7;
+    --border-grey-color: #3f3e3e;
+    --radius: 10px;
+    --item-padding: 13px 17px;
+    --header-height: 56px;
+    --sidebar-full-width: 15rem;
+    --sidebar-width: 56px;
+    --t-base: 0.18s;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1005;
+    width: calc(100% - var(--sidebar-width));
+    height: var(--header-height);
+    border-bottom: 1px solid var(--border-grey-color);
+    background-color: #262626;
+}
+
+.main {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1005;
+    width: calc(100% - var(--sidebar-width));
+    height: calc(100% - var(--header-height));
+    /*padding: 1.0rem 5.6rem 2.5333rem;*/
+    border-bottom: 1px solid var(--border-grey-color);
+    background-color: #2f2f2f;
+}
+
+.sidebar {
+    width: var(--sidebar-full-width);
+    color: var(--gray-light);
+    background-color: var(--black);
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+
+@media {
+    .sidebar {
+        width: var(--sidebar-width)
+    }
+
+    .sidebar:hover {
+        width: var(--sidebar-full-width)
+    }
+}
+
+
+.sidebar__top {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    height: var(--header-height);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.sidebar__top .top {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar__content {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    height: calc(100% - var(--header-height));
+}
+
+.sidebar__nav {
+    width: 100%;
+    padding-top: 22px;
+    display: block;
+}
+
+.sidebar__menu--item {
+    cursor: pointer;
+    height: 48px;
+    padding: var(--item-padding);
+    border-radius: var(--radius);
+    transition: all 150ms cubic-bezier(0.92, 0.69, 0.65, 0.88);
+}
+.sidebar__link {
+    white-space: nowrap;
+    width: 98px;
+    height: 22px;
+    display: flex;
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+}
+
+.sidebar__link-text {
+    white-space: nowrap;
+    -webkit-transition: var(--t-base);
+    transition: var(--t-base);
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    padding-top: 2px;
+    text-align:center;
+}
+
+.sidebar:hover .sidebar__link-text {
+    opacity: 1
+}
+
+@media {
+    .sidebar__link-text {
+        opacity: 0
+    }
+}
+
+.sidebar__menu--item:hover {
+    color: var(--white);
+}
+
+.sidebar__menu--item:hover svg {
+    fill: var(--white);
+}
+
+.sidebar__menu--item.is-active {
+    color: var(--white);
+    background-color: var(--white-light);
+}
+
+.sidebar__menu--item.is-active svg {
+    fill: var(--white);
+}
+
+
+
+.sidebar__menu--item span {
+    margin-left: 1.2rem;
+}
+
+.sidebar__profile {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar:hover .sidebar__profile {
+    opacity: 1
+}
+
+@media {
+    .sidebar__profile {
+        opacity: 0
+    }
+}
+
+.sidebar__profile .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius);
+    align-self: stretch;
+    overflow: hidden;
+}
+
+.sidebar__profile .avatar img {
+    border-radius: inherit;
+}
+
+.sidebar__profile .content {
+    margin-left: 12px;
+}
+
+.sidebar__profile .content strong {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.sidebar__profile .content p {
+    color: var(--white);
+}
+
+.sidebar__profile .arrow {
+    margin-left: auto;
+    background-color: var(--gray-medium);
+    border-radius: var(--radius);
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar__profile .arrow svg {
+    width: 13px;
+    height: 13px;
+}
+
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--gray-light);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    color: #060712;
+    background-color: #f8f4f2;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.15;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
